@@ -93,22 +93,20 @@ class Live2dViewController {
   }
 
   ///设置随机动作
-  Future<bool> live2dStartRandomMotion(String name, String priority) async {
+  Future<void> live2dStartRandomMotion(String name, String priority) async {
     final Map<String, String> args = <String, String>{
       "name": name,
       "priority" : priority
     };
-    final bool success = await _channel.invokeMethod('l2d_StartRandomMotion',args);
-    return success;
+    return _channel.invokeMethod('l2d_StartRandomMotion',args);
   }
 
   ///设置表情
-  Future<bool> live2dStartExpression(String name)async{
+  Future<void> live2dStartExpression(String name)async{
     final Map<String, String> args = <String, String>{
       "name": name,
     };
-    final bool success = await _channel.invokeMethod('l2d_StartExpression',args);
-    return success;
+    return _channel.invokeMethod('l2d_StartExpression',args);
   }
 
   Future<void> live2dSpeakMotion(bool isSpeaking) async {
@@ -119,9 +117,8 @@ class Live2dViewController {
   }
 
   ///设置随机表情
-  Future<bool> live2dStartRandomExpression(String name)async{
-    final bool success = await _channel.invokeMethod('l2d_StartRandomExpression');
-    return success;
+  Future<void> live2dStartRandomExpression(String name)async{
+    return _channel.invokeMethod('l2d_StartRandomExpression');
   }
 }
 

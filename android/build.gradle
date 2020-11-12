@@ -16,7 +16,7 @@ buildscript {
 
 rootProject.allprojects {
     repositories {
-        maven { url 'http://192.168.31.237:8081/repository/maven-public/' }
+        maven { url 'http://121.89.214.48:8181/repository/maven-public/' }
         maven { url 'https://androidx.dev/snapshots/builds/6787662/artifacts/repository/' }
 
         maven { url "http://pub.flutter-io.cn" }
